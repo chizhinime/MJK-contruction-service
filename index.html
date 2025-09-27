@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuildMaster Construction | Professional Construction Services</title>
+    <title>MJK Construction Services | Building Your Dreams Into Reality</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset and Base Styles */
@@ -15,11 +15,11 @@
         }
 
         :root {
-            --primary: #f39c12;
-            --secondary: #2c3e50;
-            --light: #ecf0f1;
-            --dark: #34495e;
-            --accent: #e74c3c;
+            --primary: #d4af37; /* Gold accent */
+            --secondary: #1a365d; /* Deep blue */
+            --light: #f8f9fa;
+            --dark: #2d3748;
+            --accent: #e53e3e;
         }
 
         html {
@@ -88,7 +88,7 @@
         }
 
         .btn:hover {
-            background: #e67e22;
+            background: #b8941f;
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
@@ -98,12 +98,12 @@
         }
 
         .btn-secondary:hover {
-            background: #1a252f;
+            background: #0f2547;
         }
 
         /* Header Styles */
         header {
-            background: rgba(44, 62, 80, 0.95);
+            background: rgba(26, 54, 93, 0.95);
             position: fixed;
             width: 100%;
             z-index: 1000;
@@ -111,7 +111,7 @@
         }
 
         header.scrolled {
-            background: rgba(44, 62, 80, 0.98);
+            background: rgba(26, 54, 93, 0.98);
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
@@ -240,6 +240,8 @@
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            padding: 30px 20px;
         }
 
         .service-card:hover {
@@ -249,20 +251,58 @@
 
         .service-icon {
             background: var(--primary);
+            width: 80px;
             height: 80px;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            margin: 0 auto 20px;
             font-size: 2.5rem;
             color: white;
         }
 
-        .service-content {
-            padding: 25px;
-        }
-
         .service-content h3 {
             color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        /* Values Section */
+        .values {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .values h2 {
+            color: white;
+        }
+
+        .values h2:after {
+            background: var(--primary);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
 
         /* Projects Section */
@@ -328,7 +368,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(44, 62, 80, 0.8);
+            background: rgba(26, 54, 93, 0.8);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -352,6 +392,50 @@
         .project-category {
             color: var(--primary);
             font-weight: 500;
+        }
+
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .process-steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .step-content {
+            padding: 0 15px;
         }
 
         /* Testimonials Section */
@@ -450,16 +534,7 @@
 
         /* Contact Section */
         .contact {
-            background: var(--secondary);
-            color: white;
-        }
-
-        .contact h2 {
-            color: white;
-        }
-
-        .contact h2:after {
-            background: var(--primary);
+            background: var(--light);
         }
 
         .contact-container {
@@ -487,10 +562,12 @@
             justify-content: center;
             margin-right: 15px;
             font-size: 1.2rem;
+            color: white;
         }
 
         .contact-details h3 {
             margin-bottom: 5px;
+            color: var(--secondary);
         }
 
         .form-group {
@@ -500,15 +577,9 @@
         .form-control {
             width: 100%;
             padding: 12px 15px;
-            border: none;
+            border: 1px solid #ddd;
             border-radius: 5px;
-            background: rgba(255,255,255,0.1);
-            color: white;
             font-size: 1rem;
-        }
-
-        .form-control::placeholder {
-            color: #ccc;
         }
 
         textarea.form-control {
@@ -518,7 +589,7 @@
 
         /* Footer */
         footer {
-            background: #1a252f;
+            background: var(--secondary);
             color: white;
             padding: 50px 0 20px;
         }
@@ -646,6 +717,15 @@
             .contact-container {
                 flex-direction: column;
             }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .process-steps:before {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {
@@ -716,7 +796,7 @@
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
-            <div class="logo">Build<span>Master</span></div>
+            <div class="logo">MJK <span>Construction</span></div>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
@@ -725,8 +805,8 @@
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
+                    <li><a href="#process">Process</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -737,8 +817,8 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>Building Your Vision, Crafting Your Future</h1>
-                <p>With over 20 years of experience, BuildMaster Construction delivers exceptional quality and innovative solutions for residential and commercial projects.</p>
+                <h1>Building Your Dreams Into Reality</h1>
+                <p>At MJK Construction Services, we specialize in creating functional, innovative spaces that cater to your lifestyle and needs. Let us transform your vision into a beautifully constructed reality.</p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn">View Our Work</a>
                     <a href="#contact" class="btn btn-secondary">Get a Quote</a>
@@ -750,16 +830,17 @@
     <!-- About Section -->
     <section class="about" id="about">
         <div class="container">
-            <h2>About Us</h2>
+            <h2>About MJK Construction</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Quality Construction Since 2003</h3>
-                    <p>BuildMaster Construction is a full-service general contractor specializing in residential and commercial construction. Our team of skilled professionals is dedicated to delivering exceptional results on every project.</p>
-                    <p>We pride ourselves on our attention to detail, commitment to quality, and ability to complete projects on time and within budget. Our client-focused approach ensures that we understand your vision and work closely with you to bring it to life.</p>
-                    <a href="#contact" class="btn">Learn More</a>
+                    <h3>Transforming Visions Into Reality</h3>
+                    <p>At MJK Construction Services, our goal is to build your dreams into reality. We specialize in creating functional, innovative spaces that cater to your lifestyle and needs.</p>
+                    <p>Whether you're envisioning a modern, timeless design or need practical solutions for a specific project, MJK Construction Services has the expertise to deliver. We believe in enhancing your environment as your ultimate accessory.</p>
+                    <p>That's why we offer a comprehensive service package including architectural design, project management, and construction solutions. Let us transform your vision into a beautifully constructed reality.</p>
+                    <a href="#contact" class="btn">Start Your Project</a>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Construction team">
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="MJK Construction Team">
                 </div>
             </div>
         </div>
@@ -772,11 +853,29 @@
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon">
+                        <i class="fas fa-drafting-compass"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Architectural Design</h3>
+                        <p>Creative and functional designs tailored to your vision and requirements.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hard-hat"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Construction Management</h3>
+                        <p>End-to-end project oversight ensuring quality, timeline, and budget adherence.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
                         <i class="fas fa-home"></i>
                     </div>
                     <div class="service-content">
                         <h3>Residential Construction</h3>
-                        <p>Custom home building, renovations, and additions tailored to your lifestyle and preferences.</p>
+                        <p>Custom homes and renovations designed for your lifestyle and preferences.</p>
                     </div>
                 </div>
                 <div class="service-card">
@@ -785,7 +884,7 @@
                     </div>
                     <div class="service-content">
                         <h3>Commercial Construction</h3>
-                        <p>Office buildings, retail spaces, and industrial facilities designed for functionality and efficiency.</p>
+                        <p>Functional and innovative commercial spaces built to enhance your business.</p>
                     </div>
                 </div>
                 <div class="service-card">
@@ -794,34 +893,92 @@
                     </div>
                     <div class="service-content">
                         <h3>Renovation & Remodeling</h3>
-                        <p>Transform your existing space with our expert renovation and remodeling services.</p>
+                        <p>Transforming existing spaces to better suit your evolving needs.</p>
                     </div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
-                        <i class="fas fa-drafting-compass"></i>
+                        <i class="fas fa-clipboard-check"></i>
                     </div>
                     <div class="service-content">
-                        <h3>Architectural Design</h3>
-                        <p>Collaborative design process to create spaces that are both beautiful and functional.</p>
+                        <h3>Consultation & Planning</h3>
+                        <p>Expert guidance from concept to completion for your construction project.</p>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-hard-hat"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values">
+        <div class="container">
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-lightbulb"></i>
                     </div>
-                    <div class="service-content">
-                        <h3>Project Management</h3>
-                        <p>Comprehensive project oversight to ensure quality, timeline, and budget adherence.</p>
+                    <h3>Innovation</h3>
+                    <p>We embrace creative solutions and cutting-edge techniques to bring unique visions to life.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Integrity</h3>
+                    <p>Honest communication and ethical practices form the foundation of every project.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Quality</h3>
+                    <p>We never compromise on craftsmanship, using premium materials and skilled workmanship.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>We work closely with clients to ensure their vision is realized exactly as imagined.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2>Our Process</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px;">We follow a structured approach to ensure your project is completed efficiently, on time, and to your exact specifications.</p>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Consultation</h3>
+                        <p>We begin by understanding your vision, requirements, and budget to create a tailored plan.</p>
                     </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-roller"></i>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Design & Planning</h3>
+                        <p>Our team creates detailed designs and develops a comprehensive project timeline.</p>
                     </div>
-                    <div class="service-content">
-                        <h3>Interior Finishing</h3>
-                        <p>Attention to detail in every finish to create spaces that reflect your style and needs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Execution</h3>
+                        <p>We bring your vision to life with precision craftsmanship and attention to detail.</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Completion</h3>
+                        <p>We ensure every detail meets your expectations before handing over the finished project.</p>
                     </div>
                 </div>
             </div>
@@ -883,13 +1040,13 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
+    <section class="testimonials">
         <div class="container">
             <h2>What Our Clients Say</h2>
             <div class="testimonials-container">
                 <div class="testimonial active">
                     <div class="testimonial-text">
-                        <p>BuildMaster Construction exceeded our expectations. Their attention to detail and commitment to quality is unmatched. Our new home is everything we dreamed of and more.</p>
+                        <p>MJK Construction Services exceeded our expectations. Their attention to detail and commitment to quality is unmatched. Our new home is everything we dreamed of and more.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
@@ -903,7 +1060,7 @@
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-text">
-                        <p>The commercial project was completed on time and within budget. The BuildMaster team was professional, communicative, and delivered exceptional quality.</p>
+                        <p>The commercial project was completed on time and within budget. The MJK team was professional, communicative, and delivered exceptional quality.</p>
                     </div>
                     <div class="testimonial-author">
                         <div class="author-image">
@@ -968,7 +1125,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>Email</h3>
-                            <p>info@buildmaster.com</p>
+                            <p>info@mjkconstruction.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -1008,8 +1165,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>BuildMaster</h3>
-                    <p>Building excellence since 2003. We are committed to delivering quality construction services with integrity and professionalism.</p>
+                    <h3>MJK Construction</h3>
+                    <p>Building your dreams into reality with functional, innovative spaces that cater to your lifestyle and needs.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1030,11 +1187,11 @@
                 <div class="footer-column">
                     <h3>Services</h3>
                     <ul class="footer-links">
+                        <li><a href="#">Architectural Design</a></li>
+                        <li><a href="#">Construction Management</a></li>
                         <li><a href="#">Residential Construction</a></li>
                         <li><a href="#">Commercial Construction</a></li>
                         <li><a href="#">Renovation & Remodeling</a></li>
-                        <li><a href="#">Architectural Design</a></li>
-                        <li><a href="#">Project Management</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -1049,7 +1206,7 @@
                 </div>
             </div>
             <div class="copyright">
-                <p>&copy; 2023 BuildMaster Construction. All Rights Reserved.</p>
+                <p>&copy; 2023 MJK Construction Services. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
