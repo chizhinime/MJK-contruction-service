@@ -108,6 +108,7 @@
             width: 100%;
             z-index: 1000;
             transition: all 0.3s ease;
+            top: 0;
         }
 
         header.scrolled {
@@ -119,7 +120,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 0;
+            padding: 15px 0;
         }
 
         .logo {
@@ -159,6 +160,21 @@
             cursor: pointer;
         }
 
+        /* Guarantee Banner */
+        .guarantee-banner {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 12px 0;
+            font-weight: 600;
+            font-size: 1.2rem;
+            position: fixed;
+            width: 100%;
+            top: 70px; /* Height of navbar */
+            z-index: 999;
+            animation: slideInDown 0.5s ease;
+        }
+
         /* Hero Section */
         .hero {
             height: 100vh;
@@ -167,6 +183,7 @@
             align-items: center;
             text-align: center;
             color: white;
+            margin-top: 102px; /* Height of navbar + banner */
         }
 
         .hero-content {
@@ -717,16 +734,6 @@
             color: #bbb;
         }
 
-        /* Guarantee Banner */
-        .guarantee-banner {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 20px 0;
-            font-weight: 600;
-            font-size: 1.2rem;
-        }
-
         /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
@@ -751,6 +758,15 @@
             }
             to {
                 opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
                 transform: translateY(0);
             }
         }
@@ -813,6 +829,10 @@
                 margin: 10px 0;
             }
             
+            .hero {
+                margin-top: 132px; /* Adjusted for mobile */
+            }
+            
             .hero h1 {
                 font-size: 2.5rem;
             }
@@ -823,6 +843,12 @@
             
             .projects-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .guarantee-banner {
+                top: 60px; /* Adjusted for mobile */
+                font-size: 1rem;
+                padding: 10px 0;
             }
         }
 
@@ -844,15 +870,14 @@
                 margin: 10px auto;
                 width: 80%;
             }
+            
+            .hero {
+                margin-top: 122px; /* Further adjusted for small screens */
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Guarantee Banner -->
-    <div class="guarantee-banner">
-        100% GUARANTEED FAST AND RELIABLE SERVICE
-    </div>
-
     <!-- Header -->
     <header id="header">
         <div class="container header-container">
@@ -872,6 +897,11 @@
             </nav>
         </div>
     </header>
+
+    <!-- Guarantee Banner -->
+    <div class="guarantee-banner">
+        100% GUARANTEED FAST AND RELIABLE SERVICE
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -1375,11 +1405,14 @@
         
         // Header scroll effect
         const header = document.getElementById('header');
+        const guaranteeBanner = document.querySelector('.guarantee-banner');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 100) {
                 header.classList.add('scrolled');
+                guaranteeBanner.style.top = '70px'; // Adjusted when scrolled
             } else {
                 header.classList.remove('scrolled');
+                guaranteeBanner.style.top = '70px'; // Reset to original position
             }
         });
         
@@ -1452,7 +1485,7 @@
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
-                        top: targetElement.offsetTop - 80,
+                        top: targetElement.offsetTop - 102, // Adjusted for navbar + banner height
                         behavior: 'smooth'
                     });
                 }
